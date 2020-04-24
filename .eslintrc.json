@@ -20,16 +20,17 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
+    "no-console": "off",
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
+    "@typescript-eslint/camelcase": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
-       {
-         "ts": "never"
-       }
-    ],
-    "no-console": "off"
+      {
+        "ts": "never"
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
