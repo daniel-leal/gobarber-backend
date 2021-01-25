@@ -1,15 +1,13 @@
 import { injectable, inject } from 'tsyringe';
 import { getHours, isAfter } from 'date-fns';
 
-import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
-
-// import User from '@modules/users/infra/typeorm/entities/User';
+import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 
 interface IRequest {
   provider_id: string;
-  day: number;
   month: number;
   year: number;
+  day: number;
 }
 
 type IResponse = Array<{
@@ -40,8 +38,6 @@ class ListProviderDayAvailabilityService {
     );
 
     const hourStart = 8;
-
-    // Array com horarios de 8 a 17h
     const eachHourArray = Array.from(
       { length: 10 },
       (_, index) => index + hourStart,
